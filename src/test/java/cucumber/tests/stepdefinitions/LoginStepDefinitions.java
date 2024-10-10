@@ -1,8 +1,17 @@
 package cucumber.tests.stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
+import java.util.List;
+
 public class LoginStepDefinitions {
+
+
+    @Given("Navigate to Login Page")
+    public void user_navigate_to_application() {
+        System.out.println("Navigated to Login Page");
+    }
 
     @Given("User is on Login Page")
     public void launchLoginPage() {
@@ -28,4 +37,11 @@ public class LoginStepDefinitions {
     public void verifyUserDetails() {
         System.out.println("User Details not displayed");
     }
+
+    @Then("Login should fail")
+    public void login_should_fail() {
+        System.out.println("Login Failed");
+    }
+
+
 }

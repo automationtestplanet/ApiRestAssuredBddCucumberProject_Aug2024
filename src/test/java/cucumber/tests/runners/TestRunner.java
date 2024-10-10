@@ -6,8 +6,16 @@ import org.junit.runner.RunWith;
 
 
 @CucumberOptions(
-    features = "Features",
-        glue = "cucumber.tests.stepdefinitions"
+        features = "Features",
+        glue = "cucumber.tests.stepdefinitions",
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        dryRun = false
+//        tags = "@ValidCredentials"
+//        tags = "@ValidCredentials and @SmokeTest"
+//        tags = "@ValidCredentials or @Test"
+//        tags = "@RegistrationFeature"
+
 )
+
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
