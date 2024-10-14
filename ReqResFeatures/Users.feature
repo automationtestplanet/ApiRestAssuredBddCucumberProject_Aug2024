@@ -1,5 +1,5 @@
 @Users
-Feature: Login Feature scenarios
+Feature: User Service Feature scenarios
 
   @ListOfUsers
   Scenario: Get List of Users

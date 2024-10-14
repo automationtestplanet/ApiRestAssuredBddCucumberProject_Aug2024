@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="Test1">
         <classes>
-            <class name="cucumber.tests.runners.TestRunner" />
+            <class name="reqres.api.tests.runners.ReqResTestRunner" />
         </classes>
     </test>
 </suite>

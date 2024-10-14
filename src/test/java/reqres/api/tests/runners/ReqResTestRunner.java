@@ -7,9 +7,10 @@ import io.cucumber.testng.CucumberOptions;
 
     features = "ReqResFeatures",
         glue = "reqres.api.tests.stepdefs",
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false,
-        tags = "@CreateUser"
+        tags = "@Users"
 
 
 

@@ -7,6 +7,7 @@ import reqres.api.tests.models.userservice.CreateUser;
 import reqres.api.tests.services.Services;
 import reqres.api.tests.services.UserService;
 import reqres.api.tests.utils.ReadDataFromJson;
+import reqres.api.tests.utils.Utils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +17,8 @@ public class UserServiceStepDefinitions {
 
     UserService userService = new UserService();
 
-    public static final String USER_SERVICE_TEST_DATA = "/src/test/resources/TestData/UserService/";
-    public static final String USERS_ENDPOINT = "/api/users";
+    public static final String USER_SERVICE_TEST_DATA = Utils.getProperty("test.data")+"UserService/";
+    public static final String USERS_ENDPOINT =  Utils.getProperty("user.service");
 
     RequestSpecification rs;
 
@@ -36,8 +37,7 @@ public class UserServiceStepDefinitions {
     public void userGetAllUserDetailsWithPageNo(String pageNum) {
         Map<String, Object> queryParam = new HashMap<>();
         queryParam.put("page", pageNum);
-        userService.getListOfUsers(rs, USERS_ENDPOINT, queryParam, 200);
-        allUsersResponse = userService.getListOfUsers(rs, "/api/users", queryParam, 200);
+        allUsersResponse = userService.getListOfUsers(rs, USERS_ENDPOINT, queryParam, 200);
     }
 
     @Then("user details must be fetched")
